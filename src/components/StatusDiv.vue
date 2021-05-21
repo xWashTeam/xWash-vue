@@ -29,7 +29,7 @@
         <p>位置 : {{ json.location }}</p>
         <p v-show="json.name != '' ">机器名 : {{ json.name }}</p>
         <p>状态 : {{ json.status=="USING"?"使用中":"空闲中" }}</p>
-        <p>剩余时间 : {{ json.remainTime }}分钟</p>
+        <p v-show="json.remainTime>=0">剩余时间 : {{ json.remainTime }}分钟</p>
         <p v-show="json.message != ''">提示信息 : {{ json.message }}</p>
       </div>
     </div>
