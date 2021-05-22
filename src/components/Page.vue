@@ -31,8 +31,13 @@ export default {
     };
   },
   methods:{
-    getStatus:function(){
-      axios.get(this.$store.state.apiLink + this.$route.params.building).then(
+    getStatus:function(autoUpdate){
+      let link = this.$store.state.apiLink + this.$route.params.building;
+      if(autoUpdate!=undefined)
+        link = link + "?autoUpdate="+autoUpdate
+      axios.get(link,{
+        withCredentials: true,
+      }).then(
         (response) => {
           this.json = response["data"]["data"];
           this.show = true;
@@ -49,7 +54,7 @@ export default {
   mounted() {
     this.getStatus();
     this.timer = setInterval(() => {
-      this.getStatus();
+      this.getStatus("1");
     }, 30000);
     
     this.$watch(
