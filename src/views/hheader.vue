@@ -8,7 +8,7 @@
       <div class="navigation">
         <router-link to="/">首页</router-link> |
         <router-link to="/s/d19">东十九</router-link> |
-        <router-link to="/s/xi1">西二</router-link> | 
+        <router-link to="/s/xi1">西一</router-link> | 
         <router-link to="/s/xi2">西二</router-link> |
         <!-- <router-link to="/s/test">神秘楼</router-link> | -->
         <router-link to="/feedback">反馈</router-link>
